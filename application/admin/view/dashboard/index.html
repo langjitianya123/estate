@@ -1,0 +1,139 @@
+<style type="text/css">
+    .sm-st {
+        background:#fff;
+        padding:20px;
+        -webkit-border-radius:3px;
+        -moz-border-radius:3px;
+        border-radius:3px;
+        margin-bottom:20px;
+        -webkit-box-shadow: 0 1px 0px rgba(0,0,0,0.05);
+        box-shadow: 0 1px 0px rgba(0,0,0,0.05);
+    }
+    .sm-st-icon {
+        width:60px;
+        height:60px;
+        display:inline-block;
+        line-height:60px;
+        text-align:center;
+        font-size:30px;
+        background:#eee;
+        -webkit-border-radius:5px;
+        -moz-border-radius:5px;
+        border-radius:5px;
+        float:left;
+        margin-right:10px;
+        color:#fff;
+    }
+    .sm-st-info {
+        font-size:12px;
+        padding-top:2px;
+    }
+    .sm-st-info span {
+        display:block;
+        font-size:24px;
+        font-weight:600;
+    }
+    .orange {
+        background:#fa8564 !important;
+    }
+    .tar {
+        background:#45cf95 !important;
+    }
+    .sm-st .green {
+        background:#86ba41 !important;
+    }
+    .pink {
+        background:#AC75F0 !important;
+    }
+    .yellow-b {
+        background: #fdd752 !important;
+    }
+    .stat-elem {
+
+        background-color: #fff;
+        padding: 18px;
+        border-radius: 40px;
+
+    }
+
+    .stat-info {
+        text-align: center;
+        background-color:#fff;
+        border-radius: 5px;
+        margin-top: -5px;
+        padding: 8px;
+        -webkit-box-shadow: 0 1px 0px rgba(0,0,0,0.05);
+        box-shadow: 0 1px 0px rgba(0,0,0,0.05);
+        font-style: italic;
+    }
+
+    .stat-icon {
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    .st-red {
+        background-color: #F05050;
+    }
+    .st-green {
+        background-color: #27C24C;
+    }
+    .st-violet {
+        background-color: #7266ba;
+    }
+    .st-blue {
+        background-color: #23b7e5;
+    }
+
+    .stats .stat-icon {
+        color: #28bb9c;
+        display: inline-block;
+        font-size: 26px;
+        text-align: center;
+        vertical-align: middle;
+        width: 50px;
+        float:left;
+    }
+
+    .stat {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block;
+        margin-right: 10px; }
+    .stat .value {
+        font-size: 20px;
+        line-height: 24px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-weight: 500; }
+    .stat .name {
+        overflow: hidden;
+        text-overflow: ellipsis; }
+    .stat.lg .value {
+        font-size: 26px;
+        line-height: 28px; }
+    .stat.lg .name {
+        font-size: 16px; }
+    .stat-col .progress {height:2px;}
+    .stat-col .progress-bar {line-height:2px;height:2px;}
+
+    .item {
+        padding:30px 0;
+    }
+</style>
+<div class="panel panel-default panel-intro">
+    <div class="panel-heading">
+        {:build_heading(null, false)}
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#one" data-toggle="tab">{:__('Dashboard')}</a></li>
+            <li><a href="#two" data-toggle="tab">{:__('Custom')}</a></li>
+        </ul>
+    </div>
+    <div class="panel-body">
+        <div id="myTabContent" class="tab-content">
+            {include file="dashboard/one" /}
+            {include file="dashboard/two" /}
+        </div>
+    </div>
+</div>

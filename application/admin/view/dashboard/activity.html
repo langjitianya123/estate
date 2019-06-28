@@ -1,0 +1,14 @@
+{__NOLAYOUT__}
+<ul class="nav nav-stacked">
+    {foreach name="activity" item="vo"}
+    <li>
+        <a href="javascript:void(0);" src="service/activity/detail/ids/{$vo.id}">
+            <span class="text">{$vo.title}</span>
+            <span class="text" style="float:right;">{$vo.create_time|date="Y-m-d H:i:s",###}</span>
+        </a>
+    </li>
+    {/foreach}
+    {empty name="activity"}
+    <li>暂无记录</li>
+    {/empty}
+</ul>

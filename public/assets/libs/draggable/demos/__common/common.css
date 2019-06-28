@@ -1,0 +1,149 @@
+/* general */
+
+* {border:0;margin:0;outline:0;padding:0}
+
+body {
+	font: 13px "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	text-align: center;
+}
+
+/* navigation */
+
+#nav {
+	background: #ddd;
+	height: 36px;
+	position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+}
+
+#nav li {
+	display: inline;
+	list-style: none;
+	margin-right: -4px;
+}
+
+#nav:before {
+	color: #888;
+	content: "Choose a demo:";
+	font-style: italic;
+	padding-right: 10px;
+}
+
+#nav a {
+	color: #666;
+	display: inline-block;
+	line-height: 36px;
+	padding: 0 20px;
+	text-decoration: none;
+}
+
+#nav a:hover {
+	background: #DA8EB2;
+	color: #fff;
+}
+
+#nav a.cur {
+	background: #C0427E;
+	color: #fff;
+	font-weight: bold;
+}
+
+/* balls */
+
+.ball {
+	border-radius: 50px;
+	color: rgba(255, 255, 255, .5);
+	display: inline-block;
+	font: bold 40px/100px Arial;
+	height: 100px;
+	width: 100px;
+}
+
+.ball p {
+	display: block;
+	background: white;
+	border-radius: 50%;
+	cursor: move;
+	width: 30px;
+	height: 30px;
+	line-height: 39px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	font-size: 22px;
+	margin: -15px 0 0 -15px;
+}
+
+.ball.has-handle {
+	cursor: default !important;
+}
+
+.red { background: red }
+.green { background: green }
+.blue { background: blue }
+
+/* layout */
+
+#container {
+	background: #eee;
+	position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		top: 36px;
+}
+
+#info {
+	background: #333;
+	color: #777;
+	font: bold 20px/40px Arial;
+	height: 100px;
+	position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+}
+
+.column {
+	float: left;
+	height: 100%;
+	position: relative;
+	width: 33.33333333%;
+}
+
+.column:after {
+	background: #111;
+	content: "";
+	position: absolute;
+		bottom: 0;
+		right: 0;
+		top: 0;
+	width: 1px;
+}
+
+.coords-x:before,
+.coords-y:before {
+	color: #111;
+	padding-right: 5px;
+	position: relative;
+		top: -1px;
+}
+
+.coords-x:before { content: "x" }
+.coords-y:before { content: "y" }
+
+h1 {
+	font-size: 40px;
+	line-height: 60px;
+}
+
+/* mobile */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+	#info {
+		font: bold 16px/32px Arial;
+	}
+
+}

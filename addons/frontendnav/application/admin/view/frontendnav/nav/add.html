@@ -1,0 +1,77 @@
+<style type="text/css">
+    #schedulepicker {
+        padding-top:7px;
+    }
+</style>
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label for="cate_id" class="control-label col-xs-12 col-sm-2">{:__('Category')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select id="cate_id" data-rule="required" class="form-control selectpicker" name="row[cate_id]">
+                {foreach name="navCateList" item="vo"}
+                <option value="{$vo.id}" {in name="$vo.id" value="$row.cate_id"}selected{/in}>{$vo.name}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="pid" class="control-label col-xs-12 col-sm-2">{:__('ParentNav')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select id="pid" class="form-control selectpicker" name="row[pid]">
+                {foreach name="navParentList" item="nav"}
+                <option value="{$nav.id}" {in name="$nav.id" value="$row.pid"}selected{/in}>{$nav.name}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="title" class="control-label col-xs-12 col-sm-2">{:__('Name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="title" name="row[name]" value="{$row.name}" data-rule="required" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="link" class="control-label col-xs-12 col-sm-2">{:__('Url')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="link" name="row[url]" value="{$row.url}" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="sort" class="control-label col-xs-12 col-sm-2">{:__('Sort')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="sort" name="row[sort]" value="{$row.sort}" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Target')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[target]', ['_self'=>__('_SELF'), '_blank'=>__('_BLANK')],$row['target'])}
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-icon" class="control-label col-xs-12 col-sm-2">{:__('Icon')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-inline">
+                <input id="c-icon" class="form-control" size="50" name="row[icon]" type="hidden" value="{$row.icon}">
+                <span><button id="plupload-image" class="btn btn-danger plupload" data-input-id="c-icon" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-preview-id="p-icon"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                <span><button type="button" id="fachoose-image" class="btn btn-primary fachoose" data-multiple="false" data-mimetype="image/*" data-input-id="c-icon"><i class="fa fa-list-ul"></i> {:__('Choose')}</button></span>
+                <ul class="row list-inline plupload-preview" id="p-icon"></ul>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[status]', ['1'=>__('Normal'), '0'=>__('Hidden')],$row['status'])}
+        </div>
+    </div>
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="button" class="btn btn-default btn-embossed" onClick="closeLayerWin(this)">{:__('Close')}</button>
+        </div>
+    </div>
+
+</form>
+<input type="hidden" name="nav_id" id="nav_id" value="{$row.id}" />

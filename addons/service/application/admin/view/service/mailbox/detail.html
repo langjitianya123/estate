@@ -1,0 +1,51 @@
+<style type="text/css">
+    #schedulepicker {
+        padding-top:7px;
+    }
+</style>
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label for="community_code" class="control-label col-xs-12 col-sm-2">{:__('Community')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select id="community_code" data-rule="required" class="form-control selectpicker show-tick" name="row[community_code]" data-live-search="true">
+                {foreach name="community" item="vo"}
+                <option value="{$vo.code}" {in name="vo.code" value="$row.community_code"}selected{/in}>{$vo.name}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Member')}:</label>
+        <div class="col-xs-12 col-sm-6">
+            <input type="text" class="form-control" name="member" value="{$admin.nickname}" readonly/>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="title" class="control-label col-xs-12 col-sm-2">{:__('Title')}:</label>
+        <div class="col-xs-12 col-sm-6">
+            <input type="text" class="form-control" id="title" name="row[title]" value="{$row.title}" data-rule="required" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="container" class="control-label col-xs-12 col-sm-2">{:__('Content')}:</label>
+        <div class="col-xs-12 col-sm-9">
+            <script id="container" name="row[content]" type="text/plain">{$row.content}</script>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[status]', ['0'=>__('UnRead'),'1'=>__('Read')])}
+        </div>
+    </div>
+
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="button" class="btn btn-default btn-embossed" onClick="closeLayerWin(this)">{:__('Close')}</button>
+        </div>
+    </div>
+
+</form>

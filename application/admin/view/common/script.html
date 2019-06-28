@@ -1,0 +1,8 @@
+<script src="__CDN__/assets/js/require.js" data-main="__CDN__/assets/js/require-backend{$Think.config.app_debug?'':'.min'}.js?v={$site.version}"></script>
+<script type="text/javascript">
+    function closeLayerWin(obj) {
+        if($(obj).parents(".layui-layer-footer").length) {
+            $(obj).parents(".layui-layer-footer").siblings(".layui-layer-setwin").find("a.layui-layer-close").click();
+        }
+    }
+</script>

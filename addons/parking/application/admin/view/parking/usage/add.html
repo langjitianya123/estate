@@ -1,0 +1,78 @@
+<style type="text/css">
+    #schedulepicker {
+        padding-top:7px;
+    }
+</style>
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label for="community_code" class="control-label col-xs-12 col-sm-2">{:__('Community')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <select id="community_code" data-rule="required" class="form-control selectpicker show-tick" name="row[community_code]" data-live-search="true">
+                {foreach name="community" item="vo"}
+                <option value="{$vo.code}" {in name="vo.code" value="$row.community_code"}selected{/in}>{$vo.name}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="pk_code" class="control-label col-xs-12 col-sm-2">{:__('PkCode')}:</label>
+        <div class="col-xs-12 col-sm-6">
+            <select id="pk_code" data-rule="required" class="form-control" name="row[pk_code]">
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="license_plate" class="control-label col-xs-12 col-sm-2">{:__('LicensePlate')}:</label>
+        <div class="col-xs-12 col-sm-6">
+            <input type="text" class="form-control" id="license_plate" name="row[license_plate]" value="{$row.license_plate}" data-rule="required" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="owner" class="control-label col-xs-12 col-sm-2">{:__('Owner')}:</label>
+        <div class="col-xs-12 col-sm-6">
+            <input type="text" class="form-control" id="owner" name="row[owner]" value="{$row.owner}" data-rule="required" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="tel" class="control-label col-xs-12 col-sm-2">{:__('Tel')}:</label>
+        <div class="col-xs-12 col-sm-6">
+            <input type="text" class="form-control" id="tel" name="row[tel]" value="{$row.tel}" data-rule="required;mobile" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[type]', ['1'=>__('Lease'), '2'=>__('Sale')],$row['type'])}
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="cost" class="control-label col-xs-12 col-sm-2">{:__('Cost')}（&yen;）:</label>
+        <div class="col-xs-12 col-sm-6">
+            <input type="text" class="form-control" id="cost" name="row[cost]" value="{$row.cost}" data-rule="required;decimal" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="begin_time" class="control-label col-xs-12 col-sm-2">{:__('BeginTime')}:</label>
+        <div class="col-xs-12 col-sm-6">
+            <input type="text" class="form-control datetimepicker" data-date-format="YYYY-MM-DD" id="begin_time" name="row[begin_time]" value="{$row.begin_time|datetime="Y-m-d"}" data-rule="date" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="end_time" class="control-label col-xs-12 col-sm-2">{:__('EndTime')}:</label>
+        <div class="col-xs-12 col-sm-6">
+            <input type="text" class="form-control datetimepicker" data-date-format="YYYY-MM-DD" id="end_time" name="row[end_time]" value="{$row.end_time|datetime="Y-m-d"}" data-rule="date" />
+        </div>
+    </div>
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="button" class="btn btn-default btn-embossed" onClick="closeLayerWin(this)">{:__('Close')}</button>
+        </div>
+    </div>
+
+</form>
+<input type="hidden" name="parking_id" id="parking_id" value="{$row.pk_code}" />

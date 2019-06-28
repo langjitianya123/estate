@@ -1,0 +1,19 @@
+.ball {
+	margin: -50px 0 0 -50px;
+	position: absolute;
+		left: 50%;
+		top: 50%;
+	z-index: 1;
+}
+
+#drag-bound-indicator {
+	background: #ddd;
+	border-radius: 150px;
+	height: 300px;
+	margin: -150px 0 0 -150px;
+	position: absolute;
+		left: 50%;
+		top: 50%;
+	width: 300px;
+	z-index: 0;
+}

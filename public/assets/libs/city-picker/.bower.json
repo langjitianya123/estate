@@ -1,0 +1,60 @@
+{
+  "name": "city-picker",
+  "description": "A simple jQuery plugin for picking provinces, cities and districts of China.",
+  "main": [
+    "dist/js/city-picker.data.js",
+    "dist/js/city-picker.js"
+  ],
+  "keywords": [
+    "中国",
+    "省份",
+    "城市",
+    "行政区",
+    "省市区",
+    "三级联动",
+    "地址选择器",
+    "China",
+    "province",
+    "provinces",
+    "city",
+    "cities",
+    "district",
+    "districts",
+    "pick",
+    "picker",
+    "picking",
+    "jquery",
+    "plugin",
+    "html",
+    "css",
+    "javascript",
+    "front-end",
+    "web",
+    "development"
+  ],
+  "authors": [
+    "Tao Shi"
+  ],
+  "homepage": "https://github.com/tshi0912/city-picker",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "docs"
+  ],
+  "dependencies": {
+    "jquery": ">= 1.9.1"
+  },
+  "version": "1.1.1",
+  "_release": "1.1.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.1.1",
+    "commit": "b07ba5e3016043ffeafae1eceed2b5945bad7116"
+  },
+  "_source": "https://github.com/tshi0912/city-picker.git",
+  "_target": "^1.1.1",
+  "_originalSource": "city-picker",
+  "_direct": true
+}

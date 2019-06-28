@@ -1,0 +1,86 @@
+<style type="text/css">
+    #schedulepicker {
+        padding-top:7px;
+    }
+</style>
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label for="name" class="control-label col-xs-12 col-sm-2">{:__('Name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="name" name="row[name]" value="{$row.name}" data-rule="required" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="address" class="control-label col-xs-12 col-sm-2">{:__('Address')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="address" name="row[address]" value="{$row.address}" data-rule="required" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="area" class="control-label col-xs-12 col-sm-2">{:__('Area')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="area" name="row[area]" value="{$row.area}" data-rule="required" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="developer" class="control-label col-xs-12 col-sm-2">{:__('Developer')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="developer" name="row[developer]" value="{$row.developer}" data-rule="required" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="estate" class="control-label col-xs-12 col-sm-2">{:__('Estate')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="estate" name="row[estate]" value="{$row.estate}" data-rule="required" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="greening_rate" class="control-label col-xs-12 col-sm-2">{:__('GreeningRate')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="greening_rate" name="row[greening_rate]" value="{$row.greening_rate}" data-rule="required" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="total_building" class="control-label col-xs-12 col-sm-2">{:__('TotalBuilding')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="total_building" name="row[total_building]" value="{$row.total_building}" data-rule="required" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="total_owner" class="control-label col-xs-12 col-sm-2">{:__('TotalOwner')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="total_owner" name="row[total_owner]" value="{$row.total_owner}" data-rule="required" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Manager')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_select('admins[]', $admins, $selectedAdmins, ['class'=>'form-control selectpicker show-tick', 'multiple'=>'', 'data-rule'=>'required', 'data-live-search'=>'true'])}
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="c-thumb" class="control-label col-xs-12 col-sm-2">{:__('Thumb')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-inline">
+                <input id="c-thumb" class="form-control" size="50" name="row[thumb]" type="hidden" value="{$row.thumb}">
+                <span><button id="plupload-image" class="btn btn-danger plupload" data-input-id="c-thumb" data-mimetype="image/gif,image/jpeg,image/png,image/jpg,image/bmp" data-preview-id="p-thumb"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                <span><button type="button" id="fachoose-image" class="btn btn-primary fachoose" data-multiple="false" data-mimetype="image/*" data-input-id="c-thumb"><i class="fa fa-list-ul"></i> {:__('Choose')}</button></span>
+                <ul class="row list-inline plupload-preview" id="p-thumb"></ul>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="container" class="control-label col-xs-12 col-sm-2">{:__('Introduction')}:</label>
+        <div class="col-xs-12 col-sm-9">
+            <script id="container" name="row[introduction]" type="text/plain">{$row.introduction}</script>
+        </div>
+    </div>
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="button" class="btn btn-default btn-embossed" onClick="closeLayerWin(this)">{:__('Close')}</button>
+        </div>
+    </div>
+
+</form>

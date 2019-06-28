@@ -1,0 +1,57 @@
+<style type="text/css">
+    #schedulepicker {
+        padding-top:7px;
+    }
+</style>
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+    <input type="hidden" name="row[device_code]" value="{$row.device_code}" />
+    <div class="form-group">
+        <label for="unit" class="control-label col-xs-12 col-sm-2">{:__('Unit')}:</label>
+        <div class="col-xs-12 col-sm-6">
+            <input type="text" class="form-control" id="unit" name="row[unit]" value="{$row.unit}" data-rule="required" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="contacts" class="control-label col-xs-12 col-sm-2">{:__('Contacts')}:</label>
+        <div class="col-xs-12 col-sm-6">
+            <input type="text" class="form-control" id="contacts" name="row[contacts]" value="{$row.contacts}" data-rule="required" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="contacts_tel" class="control-label col-xs-12 col-sm-2">{:__('ContactsTel')}:</label>
+        <div class="col-xs-12 col-sm-6">
+            <input type="text" class="form-control" id="contacts_tel" name="row[contacts_tel]" value="{$row.contacts_tel}" data-rule="required;mobile" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="last_maintain_time" class="control-label col-xs-12 col-sm-2">{:__('LastMaintainTime')}:</label>
+        <div class="col-xs-12 col-sm-6">
+            <input type="text" class="form-control datetimepicker" data-date-format="YYYY-MM-DD" id="last_maintain_time" name="row[last_maintain_time]" value="{$row.last_maintain_time|datetime="Y-m-d"}" data-rule="date" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="next_maintain_time" class="control-label col-xs-12 col-sm-2">{:__('NextMaintainTime')}:</label>
+        <div class="col-xs-12 col-sm-6">
+            <input type="text" class="form-control datetimepicker" data-date-format="YYYY-MM-DD" id="next_maintain_time" name="row[next_maintain_time]" value="{$row.next_maintain_time|datetime="Y-m-d"}" data-rule="date" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="remark" class="control-label col-xs-12 col-sm-2">{:__('Remark')}:</label>
+        <div class="col-xs-12 col-sm-6">
+            <input type="text" class="form-control" id="remark" name="row[remark]" value="{$row.remark}" />
+        </div>
+    </div>
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="button" class="btn btn-default btn-embossed" onClick="closeLayerWin(this)">{:__('Close')}</button>
+        </div>
+    </div>
+
+</form>

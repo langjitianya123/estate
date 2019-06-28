@@ -1,0 +1,19 @@
+
+<div class="commonsearch-table">
+    <form class="form-horizontal form-commonsearch nice-validator n-default" role="form" action="" novalidate="novalidate">
+        <fieldset>
+            <div class="row">
+                <div class="form-group col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <label for="community_code" class="control-label col-xs-4">{:__('Community')}</label>
+                    <div class="col-xs-12 col-sm-8">
+                        <select id="community_code" class="form-control selectpicker show-tick" name="query[community_code]" data-live-search="true">
+                            {foreach name="community" item="vo"}
+                            <option value="{$vo.code}">{$vo.name}</option>
+                            {/foreach}
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>

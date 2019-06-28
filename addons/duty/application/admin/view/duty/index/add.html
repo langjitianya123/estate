@@ -1,0 +1,45 @@
+<div style="margin-top:10px;">
+    <form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+        <input type="hidden" class="form-control" id="id" name="id" value="{$duty.id}" />
+        <input type="hidden" class="form-control" id="community_code" name="row[community_code]" value="{$duty.community_code}" />
+        <div class="form-group">
+            <label for="name" class="control-label col-xs-12 col-sm-3">{:__('Name')}:</label>
+            <div class="col-xs-12 col-sm-6">
+                <select id="name" data-rule="required" class="form-control selectpicker show-tick" name="row[name][]" data-live-search="true" multiple>
+                    {foreach name="users" item="vo"}
+                    <option value="{$vo.name}" {in name="vo.name" value="$duty.name"}selected{/in}>{$vo.name}</option>
+                    {/foreach}
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="start_time" class="control-label col-xs-12 col-sm-3">{:__('StartTime')}:</label>
+            <div class="col-xs-12 col-sm-6">
+                <input type="text" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm" id="start_time" name="row[start_time]" value="{$duty.start_time|datetime="Y-m-d H:i"}" data-rule="required;datetime" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="end_time" class="control-label col-xs-12 col-sm-3">{:__('EndTime')}:</label>
+            <div class="col-xs-12 col-sm-6">
+                <input type="text" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm" id="end_time" name="row[end_time]" value="{$duty.end_time|datetime="Y-m-d H:i"}" data-rule="required;datetime" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="remark" class="control-label col-xs-12 col-sm-3">{:__('Remark')}:</label>
+            <div class="col-xs-12 col-sm-6">
+                <input type="text" class="form-control" id="remark" name="row[remark]" value="{$duty.remark}" />
+            </div>
+        </div>
+
+        <div class="form-group hide layer-footer">
+            <label class="control-label col-xs-12 col-sm-2"></label>
+            <div class="col-xs-12 col-sm-8">
+                <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+                <button type="button" class="btn btn-default btn-embossed" onClick="closeLayerWin(this)">{:__('Close')}</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,81 @@
+<style type="text/css">
+    #schedulepicker {
+        padding-top:7px;
+    }
+</style>
+<form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label for="community_code" class="control-label col-xs-12 col-sm-2">{:__('Community')}:</label>
+        <div class="col-xs-12 col-sm-6">
+            <select id="community_code" data-rule="required" class="form-control selectpicker show-tick" name="row[community_code]" data-live-search="true">
+                {foreach name="community" item="vo"}
+                <option value="{$vo.code}" {in name="vo.code" value="$row.community_code"}selected{/in}>{$vo.name}</option>
+                {/foreach}
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="building_code" class="control-label col-xs-12 col-sm-2">{:__('Building')}:</label>
+        <div class="col-xs-12 col-sm-6">
+            <select id="building_code" data-rule="required" class="form-control" name="row[building_code]">
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="name" class="control-label col-xs-12 col-sm-2">{:__('Name')}:</label>
+        <div class="col-xs-12 col-sm-6">
+            <input type="text" class="form-control" id="name" name="row[name]" value="{$row.name}" data-rule="required" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="owner_name" class="control-label col-xs-12 col-sm-2">{:__('OwnerName')}:</label>
+        <div class="col-xs-12 col-sm-6">
+            <input type="text" class="form-control" id="owner_name" name="row[owner_name]" value="{$row.owner_name}" data-rule="required" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="owner_tel" class="control-label col-xs-12 col-sm-2">{:__('OwnerTel')}:</label>
+        <div class="col-xs-12 col-sm-6">
+            <input type="text" class="form-control" id="owner_tel" name="row[owner_tel]" value="{$row.owner_tel}" data-rule="required;mobile" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="rooms" class="control-label col-xs-12 col-sm-2">{:__('Rooms')}:</label>
+        <div class="col-xs-12 col-sm-6">
+            <input type="text" class="form-control" id="rooms" name="row[rooms]" value="{$row.rooms}" data-rule="required;digits" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="unit" class="control-label col-xs-12 col-sm-2">{:__('Unit')}:</label>
+        <div class="col-xs-12 col-sm-6">
+            <input type="text" class="form-control" id="unit" name="row[unit]" value="{$row.unit}" data-rule="required" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="floor" class="control-label col-xs-12 col-sm-2">{:__('Floor')}:</label>
+        <div class="col-xs-12 col-sm-6">
+            <input type="text" class="form-control" id="floor" name="row[floor]" value="{$row.floor}" data-rule="required;digits" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="enter_time" class="control-label col-xs-12 col-sm-2">{:__('EnterTime')}:</label>
+        <div class="col-xs-12 col-sm-6">
+            <input type="text" class="form-control datetimepicker" data-date-format="YYYY-MM-DD" id="enter_time" name="row[enter_time]" value="{$row.enter_time|datetime="Y-m-d"}" data-rule="date" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="desc" class="control-label col-xs-12 col-sm-2">{:__('Desc')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="desc" name="row[desc]" value="{$row.desc}" />
+        </div>
+    </div>
+    <div class="form-group hide layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="button" class="btn btn-default btn-embossed" onClick="closeLayerWin(this)">{:__('Close')}</button>
+        </div>
+    </div>
+
+</form>
+<input type="hidden" name="building_id" id="building_id" value="{$row.building_code}" />

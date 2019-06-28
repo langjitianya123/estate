@@ -1,0 +1,11 @@
+<div>
+    <ul>
+        {foreach name="friendlyLinks" item="vo"}
+        <li>
+            <a href="{if condition="$vo.link"}{$vo.link}{/if}" target="_blank">
+                <img src="{$vo.image}" title="{$vo.name}" alt="{$vo.name}" style="width: 150px;height: 50px;"/>
+            </a>
+        </li>
+        {/foreach}
+    </ul>
+</div>

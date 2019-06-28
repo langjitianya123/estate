@@ -1,0 +1,211 @@
+<div class="tab-pane fade active in" id="one">
+    {include file="dashboard/common_search" /}
+    <div class="row">
+        <div class="col-sm-3 col-xs-6">
+            <div class="sm-st clearfix">
+                <span class="sm-st-icon st-red"><i class="fa fa-building"></i></span>
+                <div class="sm-st-info">
+                    <span id="total_building">{$totaluser}</span>
+                    {:__('Total building')}
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+            <div class="sm-st clearfix">
+                <span class="sm-st-icon st-violet"><i class="fa fa-home"></i></span>
+                <div class="sm-st-info">
+                    <span id="total_house">{$totalviews}</span>
+                    {:__('Total house')}
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+            <div class="sm-st clearfix">
+                <span class="sm-st-icon st-blue"><i class="fa fa-male"></i></span>
+                <div class="sm-st-info">
+                    <span id="total_member">{$totalorder}</span>
+                    {:__('Total member')}
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 col-xs-6">
+            <div class="sm-st clearfix">
+                <span class="sm-st-icon st-green"><i class="fa fa-user"></i></span>
+                <div class="sm-st-info">
+                    <span id="total_lease">{$totalorderamount}</span>
+                    {:__('Total lease')}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="box box-info">
+                <div class="box-header"><h3 class="box-title">{:__('Expenses statistics')}</h3></div>
+                <div class="box-body">
+                    <div id="echart" style="height:350px;width:100%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top:15px;">
+
+        <div class="col-lg-12">
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <div class="panel bg-blue">
+                <div class="panel-body">
+                    <div class="panel-title">
+                        <span class="label label-success pull-right"></span>
+                        <h4><i class="fa fa-film"></i> {:__('Parking space count')}</h4>
+                    </div>
+                    <div class="panel-content">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h1 class="no-margins" id="total_parking_space">1234</h1>
+                                <div class="font-bold text-navy"><small style="color:#FFFFFF;">{:__('Total parking space')}</small></div>
+                            </div>
+                            <div class="col-md-6">
+                                <h1 class="no-margins" id="parking_space_percent">6754</h1>
+                                <div class="font-bold text-navy"><small style="color:#FFFFFF;">{:__('Parking space percent')}</small></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <div class="panel bg-aqua-gradient">
+                <div class="panel-body">
+                    <div class="ibox-title">
+                        <span class="label label-info pull-right"></span>
+                        <h4><i class="fa fa-truck"></i> {:__('Vehicle count')}</h4>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1 class="no-margins" id="total_vehicle">1043</h1>
+                                <div class="font-bold text-navy"><small style="color:#FFFFFF;">{:__('Total vehicle')}</small></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-6 col-md-3">
+            <div class="panel bg-purple-gradient">
+                <div class="panel-body">
+                    <div class="ibox-title">
+                        <span class="label label-primary pull-right"></span>
+                        <h4><i class="fa fa-heart"></i> {:__('Pet count')}</h4>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1 class="no-margins" id="total_pet">1043</h1>
+                                <div class="font-bold text-navy"><small style="color:#FFFFFF;">{:__('Total pet')}</small></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-md-3">
+            <div class="panel bg-green-gradient">
+                <div class="panel-body">
+                    <div class="ibox-title">
+                        <span class="label label-primary pull-right"></span>
+                        <h4><i class="fa fa-wrench"></i> {:__('Repair count')}</h4>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h1 class="no-margins" id="total_repair_pending">5302</h1>
+                                <div class="font-bold text-navy"><small style="color:#FFFFFF;">{:__('Pending')}</small></div>
+                            </div>
+                            <div class="col-md-6">
+                                <h1 class="no-margins" id="total_repair_processing">8205</h1>
+                                <div class="font-bold text-navy"><small style="color:#FFFFFF;">{:__('Processing')}</small></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="box box-danger">
+                <div class="box-header">
+                    <h3 class="box-title">{:__('Recent activity')}</h3>
+                    <div class="box-tools pull-right">
+                        <a href="service/activity" class="btn btn-box-tool">{:__('More')}</a>
+                    </div>
+                </div>
+                <div class="box-body" id="latest_activity">
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="box box-success">
+                <div class="box-header">
+                    <h3 class="box-title">{:__('Recent repair')}</h3>
+                    <div class="box-tools pull-right">
+                        <a href="service/repair" class="btn btn-box-tool">{:__('More')}</a>
+                    </div>
+                </div>
+                <div class="box-body" id="latest_repair">
+
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="box box-info">
+                <div class="box-header"><h3 class="box-title">{:__('Server info')}</h3></div>
+                <div class="box-body">
+                    <table class="table table-striped">
+                        <tbody>
+                        <tr>
+                            <td width="120px">{:__('PHP version')}</td>
+                            <td>{$Think.const.PHP_VERSION}</td>
+                        </tr>
+                        <tr>
+                            <td width="120px">{:__('Sapi name')}</td>
+                            <td>{:php_sapi_name()}</td>
+                        </tr>
+                        <tr>
+                            <td width="120px">{:__('Debug mode')}</td>
+                            <td>{$Think.config.app_debug?__('Yes'):__('No')}</td>
+                        </tr>
+                        <tr>
+                            <td width="120px">{:__('Software')}</td>
+                            <td>{$Think.server.SERVER_SOFTWARE}</td>
+                        </tr>
+                        <tr>
+                            <td width="120px">{:__('Upload mode')}</td>
+                            <td>{$uploadmode}</td>
+                        </tr>
+                        <tr>
+                            <td width="120px">{:__('Upload url')}</td>
+                            <td>{$config.upload.uploadurl}</td>
+                        </tr>
+                        <tr>
+                            <td width="120px">{:__('Timezone')}</td>
+                            <td>{:date_default_timezone_get()}</td>
+                        </tr>
+                        <tr>
+                            <td width="120px">{:__('Language')}</td>
+                            <td>{$config.language}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

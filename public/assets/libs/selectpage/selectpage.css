@@ -1,0 +1,455 @@
+@charset "utf-8";
+
+/**
+ * Container
+ */
+.sp_container {
+    border: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    vertical-align: middle;
+}
+.sp_input_disabled {
+    background-color: white;
+    border-radius: 4px 0 0 4px;
+    border-right: none;
+    border: 1px solid #79b;
+    box-shadow:         1px 1px 1px rgba(0,0,0,0.2) inset;
+    -moz-box-shadow:    1px 1px 1px rgba(0,0,0,0.2) inset;
+    -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.2) inset;
+    margin: 0px !important;
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+    min-height: 20px;
+    padding: 4px 6px;
+    vertical-align: middle;
+    display: block;
+    box-sizing: content-box;
+}
+
+.sp_container_open .sp_input {
+    border-radius: 0px 0px 0 0 !important;
+}
+
+/**
+ * "Get all" button
+ */
+div.sp_button {
+    display: inline-block;
+    border: 1px solid #79b;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    cursor: pointer;
+    text-align: center;
+    /*   
+    width: 32px;
+    height: 32px;
+    */
+    box-sizing: border-box;
+
+    border: 0px;
+    border-left: 0px;
+    width: 24px;
+    height: 29px;
+    /* right: 24px; */
+    padding: 0px;
+    vertical-align: middle;
+    line-height: 100%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+div.sp_button {
+    /* border: 1px solid #CCCCCC; */
+    border: 0px;
+    border-left: 0px;
+    width: 24px;
+    height: 28px;
+    /* right: 24px; */
+    padding: 0px;
+    vertical-align: middle;
+    line-height: 100%;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.sp_container_open > .sp_button {
+    border-bottom-right-radius: 0 !important;
+}
+
+.sp_button > img {
+    top: 6px;
+    left: 8px;
+    height: 16px;
+    position: absolute;
+    width: 16px;
+}
+
+.sp_btn_out {
+    background: #bde;
+    background-image: linear-gradient(to bottom, #eeffff, #99aabb);
+}
+
+.sp_btn_on {
+    background: #dee;
+    background-image: linear-gradient(to bottom, #ffffff, #bbbbcc);
+}
+div.sp_clear_btn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    display: block;
+    width: auto;
+    height: 100%;
+    cursor: pointer;
+    font-size: 20px;
+    color: #666666;
+    margin: 0px;
+    padding: 3px 0px 0px 0px;
+    box-sizing: border-box;
+    line-height: 1;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial;
+}
+div.sp_clear_btn:hover {
+    color: black;
+    font-weight: bold;
+}
+/**
+ * Results
+ */
+.sp_result_area {
+    /* background-color: transparent; */
+    background-color: white;
+    border-top: 0;
+    /* border: 1px solid #79b; */
+    border: 0px;
+    box-shadow:         2px 2px 2px rgba(0,0,0,0.4);
+    -moz-box-shadow:    2px 2px 2px rgba(0,0,0,0.4);
+    -webkit-box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 100;
+    width: 250px;
+}
+div.sp_result_area.shadowDown{
+    box-shadow: 0px 3px 12px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 3px 12px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0px 3px 12px rgba(0,0,0,0.2);
+}
+div.sp_result_area.shadowUp{
+    box-shadow: 0px -1px 12px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px -1px 12px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0px -1px 12px rgba(0,0,0,0.2);
+}
+.sp_results {
+    background-color: white;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-height:300px;
+    overflow-y:auto;
+}
+
+.sp_results > li {
+    margin: 0;
+    overflow: hidden;
+    padding: 5px 10px;
+    position: relative;
+    text-align: left;
+    white-space: nowrap;
+    font-size: 12px;
+    color: black;
+    cursor : pointer;
+}
+/*odd奇数行，even偶数行*/
+.sp_results > li:nth-child(even){
+    /* background-color: #EEEEEE; */
+    background-color: #EBF2FC;
+}
+.sp_results > li.sp_message_box {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    box-sizing: content-box;
+    font-size: 14px;
+    cursor: default;
+}
+ul.sp_results > li.sp_over {
+    background-color: #53A4EA !important;
+    color: #fff !important;
+    cursor: pointer;
+}
+
+ul.sp_results > li.sp_selected {
+    color: #cccccc;
+    cursor: default;
+}
+
+.sp_control_box{
+    padding: 0px;
+    height: 27px;
+    background-color: white;
+    border-bottom: 1px solid #e6e7e7;
+}
+.sp_control_box button{
+    height: 26px;
+    line-height: 20px;
+    width: 33.3%;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    font-size: 13px !important;
+    padding: 1px 10px;
+    border: 0px;
+    background-color: white;
+    color: #666666;
+}
+.sp_control_box button:last-child{
+    width: 33.4%;
+}
+.sp_control_box button:hover{
+    background-color: #F0F0F0;
+    color: black;
+}
+/**
+ * 多选模式相关样式
+ */
+div.sp_container_combo{
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-sizing: content-box;
+}
+div.sp_container_combo.sp_container_open{
+    border-radius: 0px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    border: 1px solid #75B9F0;
+}
+input.sp_combo_input{
+    border: 0px;
+    box-shadow: none;
+    background-color: transparent;
+    max-width: 100%;
+    padding: 0px;
+    height: 30px !important;
+    line-height: 30px !important;
+    min-height: 30px !important;
+}
+input.sp_combo_input:focus {
+    box-shadow: none;
+}
+input.sp_combo_input[readonly],
+input.sp_combo_input[disabled]{
+    background-color: white;
+}
+ul.sp_element_box{
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+    overflow: hidden;
+    clear: both;
+    cursor: text;
+    margin-right: 24px;
+    margin-bottom: 2px;
+    list-style: none;
+    height: auto;
+}
+ul.sp_element_box > li{
+    list-style: none;
+    padding: 0px 5px;
+    margin-left: 5px;
+    margin-top: 3px;
+    /* margin-bottom: 2px; */
+    float: left;
+    position: relative;
+}
+ul.sp_element_box li.full_width {
+    width: 100%;
+}
+ul.sp_element_box li.full_width input{
+    width: 100% !important;
+}
+ul.sp_element_box li.selected_tag {
+    border: 1px solid #AAAAAA;
+    border-radius: 3px;
+    background-color: #EFEFEF;
+    cursor: pointer;
+    max-width: 100%;
+    box-shadow: 0 0 2px white inset, 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+ul.sp_element_box li.input_box {
+    padding: 0px;
+    /* margin: 0px; */
+    margin-top: 0px;
+    height: 26px;
+    min-height: 26px;
+}
+ul.sp_element_box li.input_box input {
+    height: 26px !important;
+    line-height: 26px !important;
+    min-height: 26px !important;
+}
+ul.sp_element_box li.selected_tag span.tag_close {
+    cursor: pointer;
+    margin-left: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: Verdana;
+}
+
+/**
+ * 加深颜色表示非选中
+ */
+.sp_results_off {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.sp_input_off {
+    background: #eee;
+    color: #555;
+}
+
+.sp_hide {
+    display: none;
+}
+
+/**
+ * Navi
+ */
+.sp_navi {
+    background: #eee;
+    border-bottom: 1px solid #79b;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 1;
+    margin: 0;
+    padding: 4px;
+    text-align: right;
+}
+
+.sp_navi > p > a:link,
+.sp_navi > p > a:visited,
+.sp_navi > p > a:hover,
+.sp_navi > p > a:active {
+    color: blue;
+    font-weight: normal;
+    margin: 0 4px;
+    text-decoration: underline;
+}
+
+.sp_navi > p {
+    color: black;
+    font-size: 15px;
+    margin: 0;
+    padding-top: 4px;
+    text-align: center;
+}
+
+.sp_navi > p > a >.current {
+    color: #00c;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.sp_navi > p >.page_end {
+    color: gray;
+    font-weight: normal;
+    margin: 0 4px;
+}
+
+.navi_page,
+.navi_first,
+.navi_prev,
+.navi_next,
+.navi_last {
+    margin: auto 4px !important;
+}
+
+/**
+ * Select only
+ */
+.sp_container > .sp_select_ng {
+    background: #fcc;
+}
+
+/*输入框设置了input-block-level样式时的特殊情况修复*/
+div.sp_container input.sp_input.input-block-level{
+    box-sizing:border-box;
+    height: 30px;
+    line-height: 30px;
+    min-height: 30px;
+    width: 100%;
+}
+
+div.sp_container_open .sp_input::-ms-clear{display:none;}
+/* 移除微软浏览器，在输入框输入文本后，会出现X的问题，but is look like not working */
+input::-ms-clear{display:none;}/*隐藏文本框叉子*/
+input::-ms-reveal{display:none;}/*隐藏密码框小眼睛*/
+
+div.sp_btn_out,div.sp_btn_on {
+    background: none;
+}
+div.sp_button span.caret {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    margin-top: -1px;
+    vertical-align: middle;
+}
+div.sp_result_area.shadowDown{
+    box-shadow: 0px 5px 30px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 5px 30px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0px 5px 30px rgba(0,0,0,0.2);	
+}
+div.sp_result_area.shadowUp{
+    box-shadow: 0px -5px 30px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px -5px 30px rgba(0,0,0,0.2);
+    -webkit-box-shadow: 0px -5px 30px rgba(0,0,0,0.2);
+}
+
+/**
+ * 分页条样式（基于Bootstrap2的样式进行调整）
+ */
+div.sp_result_area .pagination {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    border-radius:0;
+    display:inline;
+}
+
+div.sp_result_area .pagination li.csFirstPage a,
+div.sp_result_area .pagination li.csPreviousPage a,
+div.sp_result_area .pagination li.csNextPage a,
+div.sp_result_area .pagination li.csLastPage a {
+    width: 30px;
+    border-radius:0;
+}
+div.sp_result_area .pagination li.csFirstPage a{
+    border-left: 0px;
+}
+div.sp_result_area .pagination li.csLastPage a{
+    border-right: 0px;
+}
+
+div.sp_result_area .pagination>li.disabled>a:hover {
+    color: #999999;background-color: white;
+}
+div.sp_result_area .pagination>li>a:hover {
+    color: #005580; background-color: #F5F5F5;
+}
+
+div.sp_result_area .pagination>li.pageInfoBox>a {
+    width: 134px;
+    text-align: center;
+}

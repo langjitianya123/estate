@@ -1,0 +1,34 @@
+<!-- sidebar: style can be found in sidebar.less -->
+<section class="sidebar">
+    <!-- Sidebar user panel -->
+    <div class="user-panel hidden-xs">
+        <div class="pull-left image">
+            <a href="general/profile" class="addtabsit"><img src="__CDN__{$admin.avatar}" class="img-circle" /></a>
+        </div>
+        <div class="pull-left info">
+            <p>{$admin.nickname}</p>
+            <i class="fa fa-circle text-success"></i> {:__('Online')}
+        </div>
+    </div>
+
+    <!-- search form -->
+    <form action="" method="get" class="sidebar-form" onsubmit="return false;">
+        <div class="input-group">
+            <input type="text" name="q" class="form-control" placeholder="{:__('Search menu')}">
+            <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+            </span>
+            <div class="menuresult list-group sidebar-form hide">
+            </div>
+        </div>
+    </form>
+    <!-- /.search form -->
+
+    <!-- sidebar menu: : style can be found in sidebar.less -->
+    <!--如果想始终显示子菜单,则给ul加上show-submenu类即可-->
+    <ul class="sidebar-menu">
+        {$menulist}
+    </ul>
+</section>
+<!-- /.sidebar -->

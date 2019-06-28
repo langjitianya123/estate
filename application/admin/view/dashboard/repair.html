@@ -1,0 +1,15 @@
+{__NOLAYOUT__}
+<ul class="nav nav-stacked">
+    {foreach name="repair" item="vo"}
+    <li>
+        <a href="javascript:void(0);" src="service/repair/detail/ids/{$vo.id}" style="color:{$vo.color};">
+            <span class="text">{$vo.device_name} （{$vo.member.name}）</span>
+            <span class="text" style="float:right;">{$vo.statusText}</span>
+            <span class="text" style="float:right;margin-right:20px;">{$vo.create_time|date="Y-m-d H:i:s",###}</span>
+        </a>
+    </li>
+    {/foreach}
+    {empty name="repair"}
+        <li>暂无记录</li>
+    {/empty}
+</ul>
