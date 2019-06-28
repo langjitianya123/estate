@@ -3,7 +3,7 @@
 
 ###运行效果图：
 
-![image](https://github.com/langjitianya123/estate/blob/master/img/1.jpg)![image](https://github.com/langjitianya123/estate/blob/master/img/2.jpg)![image](https://github.com/langjitianya123/estate/blob/master/img/3.jpg)![image](https://github.com/langjitianya123/estate/blob/master/img/4.jpg)![image](https://github.com/langjitianya123/estate/blob/master/img/5.jpg)![image](https://github.com/langjitianya123/estate/blob/master/img/6.jpg)![image](https://github.com/langjitianya123/estate/blob/master/img/7.jpg)
+![image](https://github.com/langjitianya123/estate/blob/init/img/1.jpg)![image](https://github.com/langjitianya123/estate/blob/init/img/2.jpg)![image](https://github.com/langjitianya123/estate/blob/init/img/3.jpg)![image](https://github.com/langjitianya123/estate/blob/init/img/4.jpg)![image](https://github.com/langjitianya123/estate/blob/init/img/5.jpg)![image](https://github.com/langjitianya123/estate/blob/init/img/6.jpg)![image](https://github.com/langjitianya123/estate/blob/init/img/7.jpg)
 
 
 
@@ -66,7 +66,7 @@ init_data.sql 演示数据
 	欢迎大家一起沟通交流，qq：971213720。
 
 
-<img width="200" height="auto" src="https://github.com/langjitianya123/estate/blob/master/img/8.jpg"/>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img width="200" height="auto" src="https://github.com/langjitianya123/estate/blob/master/img/9.jpg"/>
+<img width="200" height="auto" src="https://github.com/langjitianya123/estate/blob/init/img/8.jpg"/>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img width="200" height="auto" src="https://github.com/langjitianya123/estate/blob/init/img/9.jpg"/>
 
 
 
